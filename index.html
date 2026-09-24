@@ -1,0 +1,2140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>OG-IOT | Zero-Barrier AI Cataloging for Artisans</title>
+
+  <meta
+    name="description"
+    content="AI-driven market linkage and smart cataloging for marginalized artisans. Speak, snap, and turn traditional craft into a market-ready digital listing."
+  />
+
+  <style>
+    :root {
+      --bg: #f7f3ec;
+      --surface: #fffdf9;
+      --surface-dark: #171614;
+      --text: #1b1a18;
+      --muted: #6b6861;
+      --accent: #a94f35;
+      --accent-dark: #813b28;
+      --accent-soft: #ead4ca;
+      --gold: #c99a48;
+      --line: #ded8ce;
+      --green: #3e6a50;
+      --shadow: 0 18px 50px rgba(38, 30, 20, 0.08);
+      --radius: 22px;
+      --max-width: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================== */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(247, 243, 236, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(222, 216, 206, 0.65);
+    }
+
+    .nav-inner {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: var(--surface-dark);
+      color: white;
+      font-size: 15px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-cta {
+      padding: 11px 17px;
+      border-radius: 999px;
+      background: var(--surface-dark);
+      color: white !important;
+    }
+
+    .menu-btn {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      padding: 160px 0 95px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 550px;
+      height: 550px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      right: -220px;
+      top: 40px;
+      filter: blur(2px);
+      opacity: 0.55;
+      z-index: -1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: rgba(255, 253, 249, 0.7);
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .hero h1 {
+      margin-top: 24px;
+      font-size: clamp(46px, 6vw, 78px);
+      letter-spacing: -0.065em;
+      line-height: 0.98;
+      max-width: 850px;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero-description {
+      margin-top: 25px;
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 650px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 13px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-weight: 750;
+      font-size: 14px;
+      border: 1px solid var(--line);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary {
+      background: var(--surface-dark);
+      border-color: var(--surface-dark);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #282522;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 253, 249, 0.7);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .hero-meta {
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Hero visual */
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .phone {
+      max-width: 340px;
+      margin-left: auto;
+      margin-right: 35px;
+      border-radius: 38px;
+      padding: 13px;
+      background: #11100f;
+      box-shadow: 0 30px 70px rgba(20, 15, 10, 0.25);
+      transform: rotate(2deg);
+    }
+
+    .phone-screen {
+      background: #f6f2eb;
+      border-radius: 28px;
+      overflow: hidden;
+      min-height: 620px;
+    }
+
+    .phone-top {
+      padding: 16px 18px 8px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .phone-title {
+      padding: 16px 18px 10px;
+    }
+
+    .phone-title small {
+      color: var(--muted);
+      display: block;
+      font-size: 11px;
+    }
+
+    .phone-title h3 {
+      font-size: 23px;
+      line-height: 1.05;
+      margin-top: 4px;
+    }
+
+    .product-preview {
+      margin: 10px 16px;
+      border-radius: 20px;
+      height: 210px;
+      background:
+        linear-gradient(145deg, rgba(168, 81, 53, 0.16), rgba(255, 255, 255, 0)),
+        #e6ddd0;
+      display: grid;
+      place-items: center;
+      font-size: 75px;
+    }
+
+    .voice-card {
+      margin: 14px 16px;
+      padding: 14px;
+      border-radius: 17px;
+      background: white;
+      border: 1px solid var(--line);
+    }
+
+    .voice-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .voice-icon {
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+    }
+
+    .wave {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      height: 34px;
+    }
+
+    .wave span {
+      display: block;
+      width: 3px;
+      border-radius: 10px;
+      background: var(--accent);
+      animation: wave 1.2s infinite ease-in-out;
+    }
+
+    .wave span:nth-child(1) { height: 10px; animation-delay: 0s; }
+    .wave span:nth-child(2) { height: 23px; animation-delay: .1s; }
+    .wave span:nth-child(3) { height: 15px; animation-delay: .2s; }
+    .wave span:nth-child(4) { height: 28px; animation-delay: .3s; }
+    .wave span:nth-child(5) { height: 17px; animation-delay: .4s; }
+    .wave span:nth-child(6) { height: 24px; animation-delay: .5s; }
+    .wave span:nth-child(7) { height: 11px; animation-delay: .6s; }
+
+    @keyframes wave {
+      50% {
+        transform: scaleY(0.6);
+      }
+    }
+
+    .listing-card {
+      margin: 14px 16px;
+      padding: 15px;
+      border-radius: 17px;
+      background: var(--surface-dark);
+      color: white;
+    }
+
+    .listing-card-label {
+      color: #b9b4ac;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .listing-card h4 {
+      margin-top: 5px;
+      font-size: 18px;
+    }
+
+    .listing-card-bottom {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 14px;
+      color: #d8d3cb;
+      font-size: 12px;
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================== */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      max-width: 750px;
+      margin-bottom: 48px;
+    }
+
+    .section-kicker {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .section-header h2 {
+      font-size: clamp(35px, 5vw, 56px);
+      letter-spacing: -0.05em;
+      line-height: 1.03;
+      margin-top: 10px;
+    }
+
+    .section-header p {
+      margin-top: 17px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* =========================
+       PROBLEM
+    ========================== */
+
+    .problem {
+      background: #181614;
+      color: white;
+    }
+
+    .problem .section-header p {
+      color: #bdb8b0;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .problem-card {
+      padding: 28px;
+      border: 1px solid #37322d;
+      background: #201e1b;
+      border-radius: var(--radius);
+    }
+
+    .problem-number {
+      color: #c5beb4;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .problem-icon {
+      font-size: 28px;
+      margin: 30px 0 18px;
+    }
+
+    .problem-card h3 {
+      font-size: 22px;
+      margin-bottom: 9px;
+    }
+
+    .problem-card p {
+      color: #afa9a0;
+      font-size: 14px;
+    }
+
+    /* =========================
+       SOLUTION
+    ========================== */
+
+    .solution-flow {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr 1fr;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .input-box,
+    .ai-box,
+    .output-box {
+      border-radius: var(--radius);
+      padding: 28px;
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .input-box h3,
+    .ai-box h3,
+    .output-box h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .input-item {
+      padding: 13px 0;
+      border-bottom: 1px solid #eee8df;
+      font-weight: 650;
+      font-size: 14px;
+    }
+
+    .input-item:last-child {
+      border-bottom: none;
+    }
+
+    .ai-box {
+      background: var(--surface-dark);
+      color: white;
+      border-color: var(--surface-dark);
+      text-align: center;
+    }
+
+    .ai-orb {
+      width: 82px;
+      height: 82px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: grid;
+      place-items: center;
+      font-size: 31px;
+      box-shadow: 0 0 0 12px rgba(169, 79, 53, 0.12);
+    }
+
+    .ai-box p {
+      color: #bbb4aa;
+      font-size: 13px;
+    }
+
+    .arrow {
+      text-align: center;
+      color: var(--accent);
+      font-size: 30px;
+      font-weight: 900;
+    }
+
+    /* =========================
+       FEATURE CARDS
+    ========================== */
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .feature-card {
+      padding: 29px;
+      border-radius: var(--radius);
+      background: white;
+      border: 1px solid var(--line);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      background: var(--accent-soft);
+      font-size: 23px;
+    }
+
+    .feature-tag {
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #f1eee8;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .feature-card h3 {
+      margin-top: 22px;
+      font-size: 21px;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    /* =========================
+       PROVEN + NEW
+    ========================== */
+
+    .innovation {
+      background: #eee7dc;
+    }
+
+    .innovation-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: stretch;
+      gap: 18px;
+    }
+
+    .innovation-card {
+      background: white;
+      padding: 30px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+    }
+
+    .innovation-card.dark {
+      background: var(--surface-dark);
+      color: white;
+      border-color: var(--surface-dark);
+    }
+
+    .innovation-card h3 {
+      font-size: 24px;
+      margin-bottom: 19px;
+    }
+
+    .innovation-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .innovation-list li {
+      padding: 10px 12px;
+      border-radius: 11px;
+      background: #f6f2eb;
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .innovation-card.dark .innovation-list li {
+      background: #24211e;
+    }
+
+    .plus {
+      display: grid;
+      place-items: center;
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--accent);
+    }
+
+    /* =========================
+       WORKFLOW
+    ========================== */
+
+    .workflow {
+      background: var(--surface-dark);
+      color: white;
+    }
+
+    .workflow .section-header p {
+      color: #bdb8b0;
+    }
+
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .workflow-step {
+      padding: 23px;
+      border: 1px solid #37322d;
+      border-radius: 18px;
+      background: #211f1c;
+      min-height: 195px;
+    }
+
+    .workflow-step-num {
+      color: #948d84;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .workflow-step-icon {
+      font-size: 28px;
+      margin: 22px 0 12px;
+    }
+
+    .workflow-step h3 {
+      font-size: 17px;
+    }
+
+    .workflow-step p {
+      margin-top: 7px;
+      font-size: 12px;
+      color: #aaa39a;
+    }
+
+    /* =========================
+       TECH
+    ========================== */
+
+    .tech-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .pipeline {
+      background: #171614;
+      color: white;
+      border-radius: var(--radius);
+      padding: 30px;
+      overflow: hidden;
+    }
+
+    .pipeline-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .pipeline-node {
+      min-width: 130px;
+      padding: 17px;
+      border-radius: 14px;
+      border: 1px solid #39342f;
+      background: #211f1c;
+    }
+
+    .pipeline-node small {
+      color: #938c83;
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+
+    .pipeline-node strong {
+      font-size: 14px;
+    }
+
+    .pipeline-arrow {
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .tech-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .tech-card {
+      padding: 20px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+    }
+
+    .tech-card h3 {
+      font-size: 17px;
+    }
+
+    .tech-card p {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       FEASIBILITY
+    ========================== */
+
+    .feasibility-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .challenge-card {
+      padding: 28px;
+      background: white;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+    }
+
+    .challenge-row {
+      padding: 17px 0;
+      border-bottom: 1px solid #eee8df;
+    }
+
+    .challenge-row:last-child {
+      border-bottom: none;
+    }
+
+    .challenge-row h3 {
+      font-size: 16px;
+    }
+
+    .challenge-row p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    /* =========================
+       IMPACT
+    ========================== */
+
+    .impact {
+      background: #eee7dc;
+    }
+
+    .impact-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .impact-stat {
+      padding: 32px;
+      border-radius: var(--radius);
+      background: white;
+      border: 1px solid var(--line);
+    }
+
+    .impact-number {
+      font-size: clamp(35px, 4vw, 55px);
+      font-weight: 850;
+      letter-spacing: -0.05em;
+      color: var(--accent);
+    }
+
+    .impact-stat h3 {
+      margin-top: 3px;
+      font-size: 17px;
+    }
+
+    .impact-stat p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    .impact-bottom {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .impact-list {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .impact-list h3 {
+      font-size: 20px;
+    }
+
+    .impact-list ul {
+      list-style: none;
+      margin-top: 14px;
+      display: grid;
+      gap: 9px;
+    }
+
+    .impact-list li {
+      color: var(--muted);
+      font-size: 14px;
+      padding-left: 19px;
+      position: relative;
+    }
+
+    .impact-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    /* =========================
+       CTA
+    ========================== */
+
+    .cta {
+      padding: 110px 0;
+      text-align: center;
+    }
+
+    .cta-box {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 60px 35px;
+      border-radius: 32px;
+      background: var(--surface-dark);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box .section-kicker {
+      color: #e1b18d;
+    }
+
+    .cta-box h2 {
+      margin-top: 10px;
+      font-size: clamp(38px, 6vw, 65px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    .cta-box p {
+      max-width: 610px;
+      margin: 18px auto 0;
+      color: #bcb6ae;
+    }
+
+    .cta-box .hero-buttons {
+      justify-content: center;
+    }
+
+    .cta-box .btn-primary {
+      background: white;
+      color: var(--surface-dark);
+      border-color: white;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 35px 0;
+      background: #f2ede5;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      font-weight: 850;
+    }
+
+    .footer-text {
+      font-size: 12px;
+      color: var(--muted);
+      max-width: 620px;
+      text-align: right;
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 950px) {
+      .hero-grid,
+      .tech-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        order: -1;
+        display: flex;
+        justify-content: center;
+      }
+
+      .phone {
+        margin: 0 auto;
+      }
+
+      .workflow-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .innovation-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .plus {
+        padding: 6px;
+      }
+
+      .solution-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .arrow {
+        transform: rotate(90deg);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-links {
+        position: absolute;
+        top: 78px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        padding: 8px 6%;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 13px 0;
+      }
+
+      .nav-cta {
+        margin: 6px 0 12px;
+        text-align: center;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .problem-grid,
+      .features-grid,
+      .feasibility-grid,
+      .impact-stats,
+      .impact-bottom {
+        grid-template-columns: 1fr;
+      }
+
+      .workflow-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 135px;
+      }
+
+      .phone {
+        max-width: 290px;
+      }
+
+      .phone-screen {
+        min-height: 550px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-text {
+        text-align: left;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <header class="navbar">
+    <div class="container nav-inner">
+
+      <a href="#top" class="brand">
+        <span class="brand-mark">OG</span>
+        <span>OG-IOT</span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#problem">Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#technology">Technology</a>
+        <a href="#feasibility">Feasibility</a>
+        <a href="#impact">Impact</a>
+        <a href="#demo" class="nav-cta">Explore</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main id="top">
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div>
+
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            SIH 2026 · SIH26090
+          </div>
+
+          <h1>
+            Zero-Barrier
+            <span>AI Cataloging</span>
+            for Artisans.
+          </h1>
+
+          <p class="hero-description">
+            An AI-driven mobile workflow that helps artisans turn a
+            product photograph and a voice description into a
+            market-ready digital listing — without requiring typing,
+            complex editing, or high digital literacy.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#solution" class="btn btn-primary">
+              Explore the Solution
+            </a>
+
+            <a href="#technology" class="btn btn-secondary">
+              View Technology
+            </a>
+          </div>
+
+          <p class="hero-meta">
+            Heritage & Culture · Software · Team OG-IOT
+          </p>
+
+        </div>
+
+
+        <!-- Product mockup -->
+
+        <div class="hero-visual">
+
+          <div class="phone">
+
+            <div class="phone-screen">
+
+              <div class="phone-top">
+                <span>OG-IOT</span>
+                <span>Offline ready</span>
+              </div>
+
+              <div class="phone-title">
+                <small>AI CATALOGING</small>
+                <h3>Speak your craft.</h3>
+              </div>
+
+              <div class="product-preview">
+                🧺
+              </div>
+
+              <div class="voice-card">
+
+                <div class="voice-card-top">
+                  <div class="voice-icon">🎙</div>
+
+                  <div class="wave">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+
+                <p style="margin-top:10px; font-size:12px; color:#6b6861;">
+                  Voice captured in native language
+                </p>
+
+              </div>
+
+              <div class="listing-card">
+
+                <div class="listing-card-label">
+                  AI generated listing
+                </div>
+
+                <h4>Handcrafted Bamboo Basket</h4>
+
+                <div class="listing-card-bottom">
+                  <span>AI-assisted price</span>
+                  <span>Ready to list →</span>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         PROBLEM
+    ========================== -->
+
+    <section class="problem" id="problem">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-kicker">
+            The problem
+          </div>
+
+          <h2>
+            Great craft should not require great digital literacy.
+          </h2>
+
+          <p>
+            The solution starts from the realities faced by artisans:
+            language barriers, product presentation challenges,
+            connectivity limitations, and the effort required to create
+            digital marketplace listings.
+          </p>
+
+        </div>
+
+
+        <div class="problem-grid">
+
+          <article class="problem-card">
+
+            <div class="problem-number">01</div>
+
+            <div class="problem-icon">⌨️</div>
+
+            <h3>Typing Barrier</h3>
+
+            <p>
+              Creating descriptions and digital listings can be difficult
+              for users with limited digital literacy.
+            </p>
+
+          </article>
+
+
+          <article class="problem-card">
+
+            <div class="problem-number">02</div>
+
+            <div class="problem-icon">📷</div>
+
+            <h3>Presentation Barrier</h3>
+
+            <p>
+              Products photographed in homes or workshops may need
+              enhancement before being presented digitally.
+            </p>
+
+          </article>
+
+
+          <article class="problem-card">
+
+            <div class="problem-number">03</div>
+
+            <div class="problem-icon">🌐</div>
+
+            <h3>Connectivity & Market Barrier</h3>
+
+            <p>
+              Low-bandwidth environments and marketplace processes can
+              create additional friction for small sellers.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SOLUTION
+    ========================== -->
+
+    <section id="solution">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-kicker">
+            The solution
+          </div>
+
+          <h2>
+            The artisan does two things. AI handles the rest.
+          </h2>
+
+          <p>
+            The core interaction is intentionally simple:
+            provide a photo and speak naturally in a supported language.
+          </p>
+
+        </div>
+
+
+        <div class="solution-flow">
+
+          <div class="input-box">
+
+            <h3>Artisan input</h3>
+
+            <div class="input-item">
+              📷 Product photograph
+            </div>
+
+            <div class="input-item">
+              🎙 Voice description
+            </div>
+
+            <div class="input-item">
+              🗣 Native / regional language
+            </div>
+
+          </div>
+
+
+          <div class="ai-box">
+
+            <div class="ai-orb">
+              ✦
+            </div>
+
+            <h3>AI Processing Layer</h3>
+
+            <p>
+              Transcribe · Translate · Enhance · Describe ·
+              Price · Prepare listing
+            </p>
+
+          </div>
+
+
+          <div class="output-box">
+
+            <h3>Market-ready output</h3>
+
+            <div class="input-item">
+              ✨ Enhanced product image
+            </div>
+
+            <div class="input-item">
+              📝 Generated product copy
+            </div>
+
+            <div class="input-item">
+              💰 Assisted pricing
+            </div>
+
+            <div class="input-item">
+              🛒 Listing workflow
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FEATURES
+    ========================== -->
+
+    <section style="padding-top:20px;">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-kicker">
+            Core capabilities
+          </div>
+
+          <h2>
+            Designed around the artisan, not the software.
+          </h2>
+
+        </div>
+
+
+        <div class="features-grid">
+
+          <article class="feature-card">
+
+            <div class="feature-top">
+              <div class="feature-icon">🎙</div>
+              <div class="feature-tag">Input</div>
+            </div>
+
+            <h3>Multilingual Voice-to-Listing</h3>
+
+            <p>
+              Voice is converted into text, translated where needed,
+              and transformed into product content.
+            </p>
+
+          </article>
+
+
+          <article class="feature-card">
+
+            <div class="feature-top">
+              <div class="feature-icon">📷</div>
+              <div class="feature-tag">Vision AI</div>
+            </div>
+
+            <h3>Smart Product Photography</h3>
+
+            <p>
+              Background extraction, lighting adjustments and image
+              enhancement help create cleaner product visuals.
+            </p>
+
+          </article>
+
+
+          <article class="feature-card">
+
+            <div class="feature-top">
+              <div class="feature-icon">💰</div>
+              <div class="feature-tag">AI</div>
+            </div>
+
+            <h3>Price Intelligence</h3>
+
+            <p>
+              AI-assisted market pricing helps provide a starting point,
+              while allowing manual price overrides.
+            </p>
+
+          </article>
+
+
+          <article class="feature-card">
+
+            <div class="feature-top">
+              <div class="feature-icon">📡</div>
+              <div class="feature-tag">Offline-first</div>
+            </div>
+
+            <h3>Built for Patchy Connectivity</h3>
+
+            <p>
+              Data can be stored locally and synchronized when the
+              connection becomes available.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROVEN + NEW
+    ========================== -->
+
+    <section class="innovation">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-kicker">
+            Our approach
+          </div>
+
+          <h2>
+            Proven inclusion technology + artisan-specific intelligence.
+          </h2>
+
+          <p>
+            The low-barrier interaction layer can be reused from our
+            community-oriented application experience and extended
+            into the artisan commerce workflow.
+          </p>
+
+        </div>
+
+
+        <div class="innovation-grid">
+
+          <div class="innovation-card">
+
+            <h3>Proven interaction layer</h3>
+
+            <ul class="innovation-list">
+              <li>Multilingual voice interaction</li>
+              <li>Low-literacy user experience</li>
+              <li>Photo enhancement</li>
+              <li>Simple mobile workflow</li>
+            </ul>
+
+          </div>
+
+
+          <div class="plus">
+            +
+          </div>
+
+
+          <div class="innovation-card dark">
+
+            <h3>New SIH layer</h3>
+
+            <ul class="innovation-list">
+              <li>AI product cataloging</li>
+              <li>Craft story generation</li>
+              <li>Price intelligence</li>
+              <li>Marketplace linkage</li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         WORKFLOW
+    ========================== -->
+
+    <section class="workflow">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-kicker">
+            User journey
+          </div>
+
+          <h2>
+            From voice and photo to listing.
+          </h2>
+
+          <p>
+            The workflow minimizes the number of actions required from
+            the artisan while keeping the final listing verifiable.
+          </p>
+
+        </div>
+
+
+        <div class="workflow-grid">
+
+          <article class="workflow-step">
+            <div class="workflow-step-num">01</div>
+            <div class="workflow-step-icon">📷</div>
+            <h3>Capture</h3>
+            <p>Take a photo of the product.</p>
+          </article>
+
+
+          <article class="workflow-step">
+            <div class="workflow-step-num">02</div>
+            <div class="workflow-step-icon">🎙</div>
+            <h3>Speak</h3>
+            <p>Describe the craft naturally in a supported language.</p>
+          </article>
+
+
+          <article class="workflow-step">
+            <div class="workflow-step-num">03</div>
+            <div class="workflow-step-icon">✦</div>
+            <h3>AI process</h3>
+            <p>Transcription, translation, image and content generation.</p>
+          </article>
+
+
+          <article class="workflow-step">
+            <div class="workflow-step-num">04</div>
+            <div class="workflow-step-icon">💰</div>
+            <h3>Price</h3>
+            <p>Receive an AI-assisted market price suggestion.</p>
+          </article>
+
+
+          <article class="workflow-step">
+            <div class="workflow-step-num">05</div>
+            <div class="workflow-step-icon">🛒</div>
+            <h3>Publish</h3>
+            <p>Prepare the product for the target marketplace workflow.</p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         TECHNOLOGY
+    ========================== -->
+
+    <section id="technology">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-kicker">
+            Technology
+          </div>
+
+          <h2>
+            A lightweight mobile client with server-side AI.
+          </h2>
+
+          <p>
+            The architecture keeps the mobile experience lightweight
+            while moving heavier AI processing to the backend.
+          </p>
+
+        </div>
+
+
+        <div class="tech-layout">
+
+          <div class="pipeline">
+
+            <h3 style="font-size:24px;">
+              AI Pipeline
+            </h3>
+
+            <div class="pipeline-row">
+
+              <div class="pipeline-node">
+                <small>Input</small>
+                <strong>Photo + Voice</strong>
+              </div>
+
+              <div class="pipeline-arrow">→</div>
+
+              <div class="pipeline-node">
+                <small>Speech</small>
+                <strong>Whisper</strong>
+              </div>
+
+              <div class="pipeline-arrow">→</div>
+
+              <div class="pipeline-node">
+                <small>Vision</small>
+                <strong>SAM 2.0</strong>
+              </div>
+
+            </div>
+
+
+            <div class="pipeline-row">
+
+              <div class="pipeline-node">
+                <small>Image</small>
+                <strong>Real-ESRGAN</strong>
+              </div>
+
+              <div class="pipeline-arrow">→</div>
+
+              <div class="pipeline-node">
+                <small>Language</small>
+                <strong>LLaMA 3.1</strong>
+              </div>
+
+              <div class="pipeline-arrow">→</div>
+
+              <div class="pipeline-node">
+                <small>Pricing</small>
+                <strong>XGBoost</strong>
+              </div>
+
+            </div>
+
+
+            <div style="
+              margin-top:28px;
+              padding-top:20px;
+              border-top:1px solid #39342f;
+              color:#aaa39a;
+              font-size:12px;
+            ">
+              Flutter + SQLite · Firebase / Firestore · Server-side AI
+            </div>
+
+          </div>
+
+
+          <div class="tech-list">
+
+            <div class="tech-card">
+              <h3>📱 Android-first</h3>
+              <p>
+                Focused initial deployment keeps the product scope
+                practical and controlled.
+              </p>
+            </div>
+
+            <div class="tech-card">
+              <h3>💾 Offline storage</h3>
+              <p>
+                Local storage helps the application continue working
+                under patchy connectivity.
+              </p>
+            </div>
+
+            <div class="tech-card">
+              <h3>☁️ Lightweight communication</h3>
+              <p>
+                Heavy computation stays on the server and the client
+                receives lightweight results.
+              </p>
+            </div>
+
+            <div class="tech-card">
+              <h3>🔗 Integration-ready</h3>
+              <p>
+                The proposed workflow is designed around marketplace
+                and payment notification integrations.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FEASIBILITY
+    ========================== -->
+
+    <section id="feasibility" style="background:#eee7dc;">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-kicker">
+            Feasibility
+          </div>
+
+          <h2>
+            Designed for real-world constraints.
+          </h2>
+
+        </div>
+
+
+        <div class="feasibility-grid">
+
+          <div class="challenge-card">
+
+            <h3 style="font-size:23px; margin-bottom:8px;">
+              Challenge → Response
+            </h3>
+
+            <div class="challenge-row">
+              <h3>📶 Poor internet access</h3>
+              <p>
+                Offline storage with deferred uploads when connectivity
+                returns.
+              </p>
+            </div>
+
+            <div class="challenge-row">
+              <h3>🗣 Dialect accuracy</h3>
+              <p>
+                Audio read-back lets the artisan verify the generated
+                content.
+              </p>
+            </div>
+
+            <div class="challenge-row">
+              <h3>👥 Onboarding</h3>
+              <p>
+                Cluster-based setup can involve SHG leaders and
+                community support personnel.
+              </p>
+            </div>
+
+            <div class="challenge-row">
+              <h3>💰 Pricing uncertainty</h3>
+              <p>
+                AI suggestions remain editable through manual price
+                overrides.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="challenge-card">
+
+            <h3 style="font-size:23px; margin-bottom:8px;">
+              Why the approach can scale
+            </h3>
+
+            <div class="challenge-row">
+              <h3>Android-first scope</h3>
+              <p>
+                Keeps initial development targeted.
+              </p>
+            </div>
+
+            <div class="challenge-row">
+              <h3>Open-source AI core</h3>
+              <p>
+                Reduces dependence on per-call AI licensing for core
+                models.
+              </p>
+            </div>
+
+            <div class="challenge-row">
+              <h3>Low infrastructure footprint</h3>
+              <p>
+                Designed around lightweight client communication.
+              </p>
+            </div>
+
+            <div class="challenge-row">
+              <h3>Cluster-based distribution</h3>
+              <p>
+                Community networks can support adoption across artisan
+                clusters.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         IMPACT
+    ========================== -->
+
+    <section class="impact" id="impact">
+
+      <div class="container">
+
+        <div class="section-header">
+
+          <div class="section-kicker">
+            Intended impact
+          </div>
+
+          <h2>
+            From artisan identity to digital market participation.
+          </h2>
+
+          <p>
+            The goal is to reduce the digital effort needed to present
+            traditional craft online and create a repeatable model for
+            artisan clusters.
+          </p>
+
+        </div>
+
+
+        <div class="impact-stats">
+
+          <div class="impact-stat">
+            <div class="impact-number">70L+</div>
+            <h3>Registered artisans</h3>
+            <p>
+              Figure referenced in the current SIH presentation.
+            </p>
+          </div>
+
+
+          <div class="impact-stat">
+            <div class="impact-number">₹30K–50K</div>
+            <h3>Target annual uplift</h3>
+            <p>
+              Target estimate presented for potential artisan income
+              improvement.
+            </p>
+          </div>
+
+
+          <div class="impact-stat">
+            <div class="impact-number">1%</div>
+            <h3>Illustrative adoption</h3>
+            <p>
+              Presented as a scenario corresponding to 70,000 active
+              micro-sellers.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="impact-bottom">
+
+          <div class="impact-list">
+
+            <h3>For artisans</h3>
+
+            <ul>
+              <li>Year-round digital sales opportunities</li>
+              <li>Fairer market access</li>
+              <li>Home-based digital operation</li>
+              <li>Digital participation history</li>
+            </ul>
+
+          </div>
+
+
+          <div class="impact-list">
+
+            <h3>For the ecosystem</h3>
+
+            <ul>
+              <li>Trackable digital adoption</li>
+              <li>Reduced dependence on physical exhibitions</li>
+              <li>Greater participation in digital procurement</li>
+              <li>Repeatable deployment across clusters</li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         DEMO / CLOSING
+    ========================== -->
+
+    <section class="cta" id="demo">
+
+      <div class="container">
+
+        <div class="cta-box">
+
+          <div class="section-kicker">
+            OG-IOT · SIH 2026
+          </div>
+
+          <h2>
+            Speak your craft.
+            AI takes it to the market.
+          </h2>
+
+          <p>
+            A zero-barrier workflow for turning traditional craft,
+            local language, and simple product photos into structured
+            digital commerce content.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a href="#solution" class="btn btn-primary">
+              See How It Works
+            </a>
+
+            <a href="#technology" class="btn btn-secondary"
+               style="color:white; border-color:#4b4640;">
+              Explore the Tech
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>
+        <div class="footer-brand">OG-IOT</div>
+        <div style="font-size:12px; color:#777168; margin-top:3px;">
+          SIH26090 · Heritage & Culture
+        </div>
+      </div>
+
+      <div class="footer-text">
+        AI-Driven Market Linkage & Smart Cataloging Mobile Application
+        for Marginalized Artisans.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    // Mobile navigation
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    // Close mobile navigation after clicking a link
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
+    });
+
+    // Simple reveal animation
+    const revealElements = document.querySelectorAll(
+      ".problem-card, .feature-card, .innovation-card, .workflow-step, .tech-card, .challenge-card, .impact-stat, .impact-list"
+    );
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.08
+      }
+    );
+
+    revealElements.forEach(el => {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(20px)";
+      el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+      observer.observe(el);
+    });
+
+  </script>
+
+</body>
+</html>
