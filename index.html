@@ -21,7 +21,78 @@
     .feasibility{background:#eee7dc}.feasibility-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.challenge-card{padding:28px;background:#fff;border-radius:var(--r);border:1px solid var(--line)}.challenge-row{padding:17px 0;border-bottom:1px solid #eee8df}.challenge-row:last-child{border-bottom:0}.challenge-row h3{font-size:16px}.challenge-row p{color:var(--muted);font-size:13px;margin-top:4px}
     /* ROAD TO MVP */
     .mvp-road{margin-top:22px;background:#fff;border:1px solid var(--line);border-radius:26px;padding:30px;box-shadow:var(--shadow)}.mvp-road-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap}.mvp-road-head h3{font-size:31px;letter-spacing:-.035em;line-height:1.05}.mvp-road-head p{color:var(--muted);font-size:13px;max-width:650px;margin-top:7px}.kickoff-badge{display:inline-flex;align-items:center;gap:7px;padding:8px 11px;border-radius:999px;background:var(--soft);color:#813b28;font-size:11px;font-weight:850;text-transform:uppercase;white-space:nowrap}.kickoff-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 1.6s infinite}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.45);opacity:.55}}.phase-bar{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin-top:26px}.phase{padding:13px 15px;border-radius:13px;font-size:12px;font-weight:750;border:1px solid var(--line);background:#faf7f1}.phase strong{display:block;font-size:13px;margin-bottom:2px}.phase span{color:var(--muted);font-weight:550}.phase.active{border-color:rgba(169,79,53,.35);background:#f7ebe5}.timeline{margin-top:30px;display:grid;grid-template-columns:repeat(7,1fr);gap:10px}.day-card{min-height:160px;padding:14px 12px;border-radius:16px;border:1px solid var(--line);background:#fcfaf6;position:relative;overflow:hidden}.day-card:before{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:#cfc8bd}.day-card.active:before{background:var(--accent)}.day-card.phase2:before{background:var(--blue)}.day-card.phase3:before{background:var(--green)}.day-number{font-size:10px;color:var(--muted);font-weight:850;text-transform:uppercase}.day-date{font-size:11px;font-weight:800;margin-top:4px}.day-title{margin-top:15px;font-size:13px;line-height:1.2;font-weight:800}.day-detail{color:var(--muted);font-size:11px;line-height:1.35;margin-top:7px}.status-chip{margin-top:13px;display:inline-flex;padding:4px 7px;border-radius:999px;font-size:9px;font-weight:850;text-transform:uppercase;background:#ece8e1;color:#6b665e}.day-card.active .status-chip{background:var(--soft);color:#813b28}.mvp-note{display:flex;gap:12px;align-items:flex-start;margin-top:22px;padding:15px;border-radius:14px;background:#f5f1ea;color:var(--muted);font-size:12px}.mvp-note strong{color:var(--text)}
+    @media(max-width:1080px){.mvp-track{grid-template-columns:repeat(11,minmax(48px,1fr));overflow-x:auto;padding-bottom:10px}.linear-mvp::before{display:none}.mvp-day{min-width:110px}.mvp-day-dot{position:relative;top:auto;margin-top:8px}}
+    @media(max-width:950px){.evidence-wrap,.solution-tech-grid{grid-template-columns:1fr}.mvp-track{grid-template-columns:repeat(21,minmax(82px,1fr));overflow-x:auto}.mvp-current-text{flex-wrap:wrap}}
+    @media(max-width:760px){.evidence-list{grid-template-columns:1fr!important}.solution-tech-panel{padding:22px}.mvp-road{padding:22px}.mvp-track{grid-template-columns:repeat(21,minmax(90px,1fr));overflow-x:auto}.linear-caption{display:none}}
+    @media(max-width:450px){.mvp-track{grid-template-columns:repeat(21,minmax(88px,1fr))}.mvp-current-text{display:grid;gap:7px}.evidence-card{padding:20px}}
     .impact{background:#eee7dc}.impact-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.impact-stat{padding:32px;border-radius:var(--r);background:#fff;border:1px solid var(--line)}.impact-number{font-size:clamp(35px,4vw,55px);font-weight:850;letter-spacing:-.05em;color:var(--accent)}.impact-stat h3{margin-top:3px;font-size:17px}.impact-stat p{color:var(--muted);font-size:13px;margin-top:8px}.impact-bottom{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:18px}.impact-list{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px}.impact-list h3{font-size:20px}.impact-list ul{list-style:none;margin-top:14px;display:grid;gap:9px}.impact-list li{color:var(--muted);font-size:14px;padding-left:19px;position:relative}.impact-list li:before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:800}
+
+    /* EVIDENCE */
+    .evidence-wrap{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .evidence-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow)}
+    .evidence-label{display:inline-flex;align-items:center;gap:7px;padding:6px 10px;border-radius:999px;background:#f7ebe5;color:#813b28;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .evidence-label .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+    .evidence-card h3{font-size:23px;margin-top:14px}
+    .evidence-card p{font-size:13px;color:var(--muted);margin-top:8px}
+    .evidence-media{margin-top:17px;border-radius:16px;overflow:hidden;background:#171614;border:1px solid #312d28}
+    .evidence-media video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#171614}
+    .audio-box{padding:18px;background:#f7f3ec}
+    .audio-box audio{width:100%}
+    .media-caption{padding:10px 13px;font-size:11px;color:#b7b0a7;background:#171614}
+    .evidence-list{margin-top:14px;display:grid;gap:10px;list-style:none}
+    .evidence-list li{font-size:13px;padding:11px 12px;background:#f7f3ec;border-radius:12px}
+    .evidence-list li strong{color:var(--text)}
+    .tourism-strip{margin-top:22px;padding:20px 22px;border-radius:18px;background:#171614;color:white;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center}
+    .tourism-icon{width:48px;height:48px;border-radius:15px;background:var(--accent);display:grid;place-items:center;font-size:22px}
+    .tourism-strip strong{font-size:17px}
+    .tourism-strip p{margin-top:4px;color:#bdb6ad;font-size:12px}
+    .small-community-line{margin-top:9px;color:#e0d8cf!important;font-size:12px!important}
+    .image-placeholder{min-height:190px;display:grid;place-items:center;text-align:center;padding:20px;background:linear-gradient(145deg,#e8ded0,#f8f3eb);color:#756e65}
+    .image-placeholder strong{display:block;color:var(--text);font-size:15px}
+    .image-placeholder span{display:block;margin-top:5px;font-size:11px}
+
+    /* MERGED SOLUTION + TECHNOLOGY */
+    .solution-tech{background:#f7f3ec}
+    .solution-tech .section-header{max-width:900px}
+    .solution-tech-grid{margin-top:46px;display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:stretch}
+    .solution-tech-panel{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px;box-shadow:var(--shadow)}
+    .solution-tech-panel.dark{background:var(--dark);color:#fff;border-color:var(--dark)}
+    .solution-tech-panel h3{font-size:23px}
+    .solution-tech-panel p{margin-top:8px;color:var(--muted);font-size:13px}
+    .solution-tech-panel.dark p{color:#bdb8b0}
+    .solution-tech-panel .tech-list{margin-top:18px}
+    .solution-tech-panel .tech-card{box-shadow:none}
+
+    /* FEASIBILITY + MVP */
+    .feasibility-mvp{background:#eee7dc}
+    .feasibility-mvp .mvp-road{margin-top:24px}
+    .linear-mvp{margin-top:28px;position:relative;padding:20px 0 4px}
+    .linear-mvp::before{content:"";position:absolute;left:0;right:0;top:79px;height:6px;border-radius:999px;background:linear-gradient(90deg,#d77956,#d7ae44,#7183a3,#4aaeb7,#d55a7f,#7c6b51,#3c94c7)}
+    .mvp-track{display:grid;grid-template-columns:repeat(21,minmax(46px,1fr));gap:7px;position:relative;z-index:1}
+    .mvp-day{min-height:154px;position:relative;display:flex;flex-direction:column;align-items:center}
+    .mvp-day-card{width:100%;padding:11px 7px;border-radius:14px;background:#fff;border:1px solid var(--line);text-align:center;transition:.25s}
+    .mvp-day:nth-child(-n+7) .mvp-day-card{border-top:4px solid #d77956}
+    .mvp-day:nth-child(n+8):nth-child(-n+14) .mvp-day-card{border-top:4px solid #7183a3}
+    .mvp-day:nth-child(n+15) .mvp-day-card{border-top:4px solid #3e6a50}
+    .mvp-day.current .mvp-day-card{background:#f7ebe5;border-color:rgba(169,79,53,.45);box-shadow:0 10px 22px rgba(169,79,53,.16);transform:translateY(-6px)}
+    .mvp-day-dot{width:24px;height:24px;border-radius:50%;background:#fff;border:6px solid #8c857b;box-shadow:0 0 0 2px #fff;position:absolute;top:68px;z-index:2}
+    .mvp-day.current .mvp-day-dot{border-color:var(--accent);box-shadow:0 0 0 4px rgba(169,79,53,.12)}
+    .mvp-day-num{font-size:10px;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+    .mvp-day-title{margin-top:8px;font-size:12px;font-weight:850;line-height:1.15}
+    .mvp-day-detail{margin-top:5px;color:var(--muted);font-size:10px;line-height:1.25}
+    .mvp-status{display:none;margin-top:7px;padding:3px 6px;border-radius:999px;background:var(--accent-soft);color:#813b28;font-size:8px;font-weight:900;text-transform:uppercase}
+    .mvp-day.current .mvp-status{display:inline-flex}
+    .mvp-current-text{margin-top:20px;display:flex;justify-content:space-between;gap:12px;align-items:center;color:var(--muted);font-size:11px}
+    .mvp-current-text strong{color:var(--text)}
+    .linear-caption{margin-top:22px;display:flex;justify-content:space-between;gap:12px;font-size:11px;color:var(--muted)}
+    .feasibility-evidence{margin-top:24px}
+    .feasibility-evidence .evidence-card{background:#fffdf9}
+
+    /* IMPACT EVIDENCE */
+    .impact-evidence{margin-top:20px;padding:22px 24px;border-radius:18px;background:#fff;border:1px solid var(--line)}
+    .impact-evidence h3{font-size:19px}
+    .impact-evidence p{margin-top:6px;color:var(--muted);font-size:13px}
+
     .cta{padding:110px 0;text-align:center}.cta-box{max-width:850px;margin:auto;padding:60px 35px;border-radius:32px;background:var(--dark);color:#fff;box-shadow:var(--shadow)}.cta-box .section-kicker{color:#e1b18d}.cta-box h2{margin-top:10px;font-size:clamp(38px,6vw,65px);line-height:1;letter-spacing:-.055em}.cta-box p{max-width:610px;margin:18px auto 0;color:#bcb6ae}.cta-box .hero-buttons{justify-content:center}.cta-box .btn-primary{background:#fff;color:var(--dark);border-color:#fff}
     footer{border-top:1px solid var(--line);padding:35px 0;background:#f2ede5}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}.footer-brand{font-weight:850}.footer-text{font-size:12px;color:var(--muted);max-width:620px;text-align:right}
     @media(max-width:1080px){.timeline{grid-template-columns:repeat(4,1fr)}}@media(max-width:950px){.hero-grid,.tech-layout{grid-template-columns:1fr}.hero-visual{order:-1;display:flex;justify-content:center}.phone{margin:auto}.workflow-grid{grid-template-columns:repeat(2,1fr)}.innovation-grid{grid-template-columns:1fr}.plus{padding:6px}.solution-flow{grid-template-columns:1fr}.timeline{grid-template-columns:repeat(3,1fr)}}@media(max-width:760px){.nav-links{position:absolute;top:78px;left:0;width:100%;flex-direction:column;gap:0;padding:8px 6%;background:var(--bg);border-bottom:1px solid var(--line);display:none}.nav-links.active{display:flex}.nav-links a{width:100%;padding:13px 0}.nav-cta{margin:6px 0 12px;text-align:center}.menu-btn{display:block}.problem-grid,.features-grid,.feasibility-grid,.impact-stats,.impact-bottom{grid-template-columns:1fr}.workflow-grid{grid-template-columns:1fr}.hero{padding-top:135px}.phone{max-width:290px}.timeline{grid-template-columns:repeat(2,1fr)}.phase-bar{grid-template-columns:1fr}.footer-inner{flex-direction:column;align-items:flex-start}.footer-text{text-align:left}}@media(max-width:450px){.timeline{grid-template-columns:1fr}.day-card{min-height:auto}}
@@ -69,111 +140,398 @@
       </div>
     </section>
 
-    <section class="problem" id="problem"><div class="container">
-      <div class="section-header"><div class="section-kicker">The problem</div><h2>Great craft should not require great digital literacy.</h2><p>The solution starts from the realities faced by artisans: language barriers, product presentation challenges, connectivity limitations, and the effort required to create digital marketplace listings.</p></div>
-      <div class="problem-grid">
-        <article class="problem-card"><div class="problem-number">01</div><div class="problem-icon">⌨️</div><h3>Typing Barrier</h3><p>Creating descriptions and digital listings can be difficult for users with limited digital literacy.</p></article>
-        <article class="problem-card"><div class="problem-number">02</div><div class="problem-icon">📷</div><h3>Presentation Barrier</h3><p>Products photographed in homes or workshops may need enhancement before being presented digitally.</p></article>
-        <article class="problem-card"><div class="problem-number">03</div><div class="problem-icon">🌐</div><h3>Connectivity & Market Barrier</h3><p>Low-bandwidth environments and marketplace processes can create additional friction for small sellers.</p></article>
-      </div>
-    </div></section>
-
-    <section id="solution"><div class="container">
-      <div class="section-header"><div class="section-kicker">The solution</div><h2>The artisan does two things. AI handles the rest.</h2><p>The core interaction is intentionally simple: provide a photo and speak naturally in a supported language.</p></div>
-      <div class="solution-flow">
-        <div class="input-box"><h3>Artisan input</h3><div class="input-item">📷 Product photograph</div><div class="input-item">🎙 Voice description</div><div class="input-item">🗣 Native / regional language</div></div>
-        <div class="ai-box"><div class="ai-orb">✦</div><h3>AI Processing Layer</h3><p>Transcribe · Translate · Enhance · Describe · Price · Prepare listing</p></div>
-        <div class="output-box"><h3>Market-ready output</h3><div class="input-item">✨ Enhanced product image</div><div class="input-item">📝 Generated product copy</div><div class="input-item">💰 Assisted pricing</div><div class="input-item">🛒 Listing workflow</div></div>
-      </div>
-    </div></section>
-
-    <section style="padding-top:20px"><div class="container">
-      <div class="section-header"><div class="section-kicker">Core capabilities</div><h2>Designed around the artisan, not the software.</h2></div>
-      <div class="features-grid">
-        <article class="feature-card"><div class="feature-top"><div class="feature-icon">🎙</div><div class="feature-tag">Input</div></div><h3>Multilingual Voice-to-Listing</h3><p>Voice is converted into text, translated where needed, and transformed into product content.</p></article>
-        <article class="feature-card"><div class="feature-top"><div class="feature-icon">📷</div><div class="feature-tag">Vision AI</div></div><h3>Smart Product Photography</h3><p>Background extraction, lighting adjustments and image enhancement help create cleaner product visuals.</p></article>
-        <article class="feature-card"><div class="feature-top"><div class="feature-icon">💰</div><div class="feature-tag">AI</div></div><h3>Price Intelligence</h3><p>AI-assisted market pricing helps provide a starting point, while allowing manual price overrides.</p></article>
-        <article class="feature-card"><div class="feature-top"><div class="feature-icon">📡</div><div class="feature-tag">Offline-first</div></div><h3>Built for Patchy Connectivity</h3><p>Data can be stored locally and synchronized when the connection becomes available.</p></article>
-      </div>
-    </div></section>
-
-    <section class="innovation"><div class="container">
-      <div class="section-header"><div class="section-kicker">Our approach</div><h2>Proven inclusion technology + artisan-specific intelligence.</h2><p>The low-barrier interaction layer can be reused from our community-oriented application experience and extended into the artisan commerce workflow.</p></div>
-      <div class="innovation-grid"><div class="innovation-card"><h3>Proven interaction layer</h3><ul class="innovation-list"><li>Multilingual voice interaction</li><li>Low-literacy user experience</li><li>Photo enhancement</li><li>Simple mobile workflow</li></ul></div><div class="plus">+</div><div class="innovation-card dark"><h3>New SIH layer</h3><ul class="innovation-list"><li>AI product cataloging</li><li>Craft story generation</li><li>Price intelligence</li><li>Marketplace linkage</li></ul></div></div>
-    </div></section>
-
-    <section class="workflow"><div class="container">
-      <div class="section-header"><div class="section-kicker">User journey</div><h2>From voice and photo to listing.</h2><p>The workflow minimizes the number of actions required from the artisan while keeping the final listing verifiable.</p></div>
-      <div class="workflow-grid">
-        <article class="workflow-step"><div class="workflow-step-num">01</div><div class="workflow-step-icon">📷</div><h3>Capture</h3><p>Take a photo of the product.</p></article>
-        <article class="workflow-step"><div class="workflow-step-num">02</div><div class="workflow-step-icon">🎙</div><h3>Speak</h3><p>Describe the craft naturally in a supported language.</p></article>
-        <article class="workflow-step"><div class="workflow-step-num">03</div><div class="workflow-step-icon">✦</div><h3>AI process</h3><p>Transcription, translation, image and content generation.</p></article>
-        <article class="workflow-step"><div class="workflow-step-num">04</div><div class="workflow-step-icon">💰</div><h3>Price</h3><p>Receive an AI-assisted market price suggestion.</p></article>
-        <article class="workflow-step"><div class="workflow-step-num">05</div><div class="workflow-step-icon">🛒</div><h3>Publish</h3><p>Prepare the product for the target marketplace workflow.</p></article>
-      </div>
-    </div></section>
-
-    <section id="technology"><div class="container">
-      <div class="section-header"><div class="section-kicker">Technology</div><h2>A lightweight mobile client with server-side AI.</h2><p>The architecture keeps the mobile experience lightweight while moving heavier AI processing to the backend.</p></div>
-      <div class="tech-layout">
-        <div class="pipeline"><h3 style="font-size:24px">AI Pipeline</h3><div class="pipeline-row"><div class="pipeline-node"><small>Input</small><strong>Photo + Voice</strong></div><div class="pipeline-arrow">→</div><div class="pipeline-node"><small>Speech</small><strong>Whisper</strong></div><div class="pipeline-arrow">→</div><div class="pipeline-node"><small>Vision</small><strong>SAM 2.0</strong></div></div><div class="pipeline-row"><div class="pipeline-node"><small>Image</small><strong>Real-ESRGAN</strong></div><div class="pipeline-arrow">→</div><div class="pipeline-node"><small>Language</small><strong>LLaMA 3.1</strong></div><div class="pipeline-arrow">→</div><div class="pipeline-node"><small>Pricing</small><strong>XGBoost</strong></div></div><div style="margin-top:28px;padding-top:20px;border-top:1px solid #39342f;color:#aaa39a;font-size:12px">Flutter + SQLite · Firebase / Firestore · Server-side AI</div></div>
-        <div class="tech-list"><div class="tech-card"><h3>📱 Android-first</h3><p>Focused initial deployment keeps the product scope practical and controlled.</p></div><div class="tech-card"><h3>💾 Offline storage</h3><p>Local storage helps the application continue working under patchy connectivity.</p></div><div class="tech-card"><h3>☁️ Lightweight communication</h3><p>Heavy computation stays on the server and the client receives lightweight results.</p></div><div class="tech-card"><h3>🔗 Integration-ready</h3><p>The proposed workflow is designed around marketplace and payment notification integrations.</p></div></div>
-      </div>
-    </div></section>
-
-    <section class="feasibility" id="feasibility"><div class="container">
-      <div class="section-header"><div class="section-kicker">Feasibility</div><h2>Designed for real-world constraints — and a focused 21-day MVP sprint.</h2><p>The development roadmap follows the three-week structure already planned for the project: app UI and multilingual mode, backend and dashboard, then marketplace integration and rollout readiness.</p></div>
-      <div class="feasibility-grid">
-        <div class="challenge-card"><h3 style="font-size:23px;margin-bottom:8px">Challenge → Response</h3><div class="challenge-row"><h3>📶 Poor internet access</h3><p>Offline storage with deferred uploads when connectivity returns.</p></div><div class="challenge-row"><h3>🗣 Dialect accuracy</h3><p>Audio read-back lets the artisan verify the generated content.</p></div><div class="challenge-row"><h3>👥 Onboarding</h3><p>Cluster-based setup can involve SHG leaders and community support personnel.</p></div><div class="challenge-row"><h3>💰 Pricing uncertainty</h3><p>AI suggestions remain editable through manual price overrides.</p></div></div>
-        <div class="challenge-card"><h3 style="font-size:23px;margin-bottom:8px">Why the approach can scale</h3><div class="challenge-row"><h3>Android-first scope</h3><p>Keeps initial development targeted.</p></div><div class="challenge-row"><h3>Open-source AI core</h3><p>Reduces dependence on per-call AI licensing for core models.</p></div><div class="challenge-row"><h3>Low infrastructure footprint</h3><p>Designed around lightweight client communication.</p></div><div class="challenge-row"><h3>Cluster-based distribution</h3><p>Community networks can support adoption across artisan clusters.</p></div></div>
-      </div>
-
-      <div class="mvp-road" id="mvp">
-        <div class="mvp-road-head">
-          <div><div class="section-kicker">21-day development plan</div><h3>Road to MVP</h3><p>Kickoff: <strong>26 September 2026</strong>. This timeline turns the project's planned three-week rollout into a day-by-day MVP development view.</p></div>
-          <div class="kickoff-badge"><span class="kickoff-dot"></span>Current sprint: Day 1</div>
+    <section class="problem" id="problem">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">The problem</div>
+          <h2>Great craft should not require great digital barriers.</h2>
+          <p>
+            Our problem evidence focuses on two major barriers faced by artisans:
+            reaching the right customers online and getting products to those
+            customers without damage or unaffordable transportation costs.
+          </p>
         </div>
 
-        <div class="phase-bar">
-          <div class="phase active"><strong>Days 1–7 · Foundation</strong><span>App UI + multilingual mode</span></div>
-          <div class="phase"><strong>Days 8–14 · Backend</strong><span>Backend setup + dashboard</span></div>
-          <div class="phase"><strong>Days 15–21 · Integration</strong><span>Marketplace APIs + rollout readiness</span></div>
+        <div class="problem-grid">
+          <article class="problem-card">
+            <div class="problem-number">01</div>
+            <div class="problem-icon">🎯</div>
+            <h3>Customer Reach</h3>
+            <p>
+              Many artisans are still outside suitable online platforms or
+              struggle to reach the customers who are actually looking for
+              their type of craft.
+            </p>
+          </article>
+
+          <article class="problem-card">
+            <div class="problem-number">02</div>
+            <div class="problem-icon">🚚</div>
+            <h3>Transportation</h3>
+            <p>
+              Physical delivery can become expensive or risky: products may be
+              damaged in transit, while high transport costs can cause customers
+              to drop a purchase.
+            </p>
+          </article>
+
+          <article class="problem-card">
+            <div class="problem-number">03</div>
+            <div class="problem-icon">⌨️</div>
+            <h3>Digital Barrier</h3>
+            <p>
+              Even when an online opportunity exists, creating photographs,
+              descriptions and listings can still require skills many artisans
+              do not have.
+            </p>
+          </article>
         </div>
 
-        <div class="timeline">
-          <article class="day-card active"><div class="day-number">Day 01</div><div class="day-date">26 Sep</div><div class="day-title">MVP kickoff</div><div class="day-detail">Freeze MVP scope, screens and priorities.</div><span class="status-chip">Active</span></article>
-          <article class="day-card active"><div class="day-number">Day 02</div><div class="day-date">27 Sep</div><div class="day-title">UI foundation</div><div class="day-detail">Flutter navigation and primary screens.</div><span class="status-chip">Phase 1</span></article>
-          <article class="day-card active"><div class="day-number">Day 03</div><div class="day-date">28 Sep</div><div class="day-title">Catalog flow</div><div class="day-detail">Product capture, preview and catalog flow.</div><span class="status-chip">Phase 1</span></article>
-          <article class="day-card active"><div class="day-number">Day 04</div><div class="day-date">29 Sep</div><div class="day-title">Voice input</div><div class="day-detail">Recording, playback and voice UI.</div><span class="status-chip">Phase 1</span></article>
-          <article class="day-card active"><div class="day-number">Day 05</div><div class="day-date">30 Sep</div><div class="day-title">Language mode</div><div class="day-detail">Language selection and transcription flow.</div><span class="status-chip">Phase 1</span></article>
-          <article class="day-card active"><div class="day-number">Day 06</div><div class="day-date">01 Oct</div><div class="day-title">Photo workflow</div><div class="day-detail">Capture, upload and enhancement states.</div><span class="status-chip">Phase 1</span></article>
-          <article class="day-card active"><div class="day-number">Day 07</div><div class="day-date">02 Oct</div><div class="day-title">Phase 1 integration</div><div class="day-detail">Connect UI, voice and photo flows.</div><span class="status-chip">Milestone</span></article>
+        <div class="evidence-wrap">
+          <div class="evidence-card">
+            <div class="evidence-label"><span class="dot"></span>Problem Evidence</div>
+            <h3>What we are documenting</h3>
+            <p>
+              Use the field recording below to show the real-world customer
+              access and transport challenges encountered by artisans.
+            </p>
+            <div class="evidence-media">
+              <video controls playsinline poster="assets/problem-evidence-poster.jpg">
+                <source src="assets/problem-evidence.mp4" type="video/mp4">
+                Your browser does not support video playback.
+              </video>
+              <div class="media-caption">
+                Add your field/problem video as <strong>assets/problem-evidence.mp4</strong>.
+              </div>
+            </div>
+          </div>
 
-          <article class="day-card phase2"><div class="day-number">Day 08</div><div class="day-date">03 Oct</div><div class="day-title">Backend setup</div><div class="day-detail">Firebase / Firestore and data structure.</div><span class="status-chip">Phase 2</span></article>
-          <article class="day-card phase2"><div class="day-number">Day 09</div><div class="day-date">04 Oct</div><div class="day-title">Local storage</div><div class="day-detail">SQLite persistence for offline use.</div><span class="status-chip">Phase 2</span></article>
-          <article class="day-card phase2"><div class="day-number">Day 10</div><div class="day-date">05 Oct</div><div class="day-title">AI pipeline wiring</div><div class="day-detail">Connect voice and image processing.</div><span class="status-chip">Phase 2</span></article>
-          <article class="day-card phase2"><div class="day-number">Day 11</div><div class="day-date">06 Oct</div><div class="day-title">Catalog generation</div><div class="day-detail">Structured title, description and fields.</div><span class="status-chip">Phase 2</span></article>
-          <article class="day-card phase2"><div class="day-number">Day 12</div><div class="day-date">07 Oct</div><div class="day-title">Dashboard</div><div class="day-detail">Basic admin and development monitoring view.</div><span class="status-chip">Phase 2</span></article>
-          <article class="day-card phase2"><div class="day-number">Day 13</div><div class="day-date">08 Oct</div><div class="day-title">Verification</div><div class="day-detail">Read-back / review before confirmation.</div><span class="status-chip">Phase 2</span></article>
-          <article class="day-card phase2"><div class="day-number">Day 14</div><div class="day-date">09 Oct</div><div class="day-title">Backend milestone</div><div class="day-detail">End-to-end core cataloging test.</div><span class="status-chip">Milestone</span></article>
-
-          <article class="day-card phase3"><div class="day-number">Day 15</div><div class="day-date">10 Oct</div><div class="day-title">Marketplace layer</div><div class="day-detail">Listing payloads and integration interfaces.</div><span class="status-chip">Phase 3</span></article>
-          <article class="day-card phase3"><div class="day-number">Day 16</div><div class="day-date">11 Oct</div><div class="day-title">GeM integration</div><div class="day-detail">Validate the planned GeM workflow layer.</div><span class="status-chip">Phase 3</span></article>
-          <article class="day-card phase3"><div class="day-number">Day 17</div><div class="day-date">12 Oct</div><div class="day-title">Amazon Karigar layer</div><div class="day-detail">Prepare the planned Amazon connection.</div><span class="status-chip">Phase 3</span></article>
-          <article class="day-card phase3"><div class="day-number">Day 18</div><div class="day-date">13 Oct</div><div class="day-title">Sync & resilience</div><div class="day-detail">Test deferred upload and recovery behaviour.</div><span class="status-chip">Phase 3</span></article>
-          <article class="day-card phase3"><div class="day-number">Day 19</div><div class="day-date">14 Oct</div><div class="day-title">Pilot testing</div><div class="day-detail">Run artisan scenarios and fix critical issues.</div><span class="status-chip">Phase 3</span></article>
-          <article class="day-card phase3"><div class="day-number">Day 20</div><div class="day-date">15 Oct</div><div class="day-title">Stabilize MVP</div><div class="day-detail">Polish UI and prepare demonstration flow.</div><span class="status-chip">Phase 3</span></article>
-          <article class="day-card phase3"><div class="day-number">Day 21</div><div class="day-date">16 Oct</div><div class="day-title">MVP demo ready</div><div class="day-detail">Complete the 21-day MVP milestone.</div><span class="status-chip">MVP</span></article>
+          <div class="evidence-card">
+            <div class="evidence-label"><span class="dot"></span>Problem Evidence</div>
+            <h3>Artisan voice evidence</h3>
+            <p>
+              Add a short artisan interview or voice note describing the two
+              core issues: reaching the right customers and the cost/risk of
+              transportation.
+            </p>
+            <div class="evidence-media audio-box">
+              <audio controls>
+                <source src="assets/problem-evidence.mp3" type="audio/mpeg">
+                Your browser does not support audio playback.
+              </audio>
+              <div class="media-caption" style="margin:14px -18px -18px;">
+                Add your audio as <strong>assets/problem-evidence.mp3</strong>.
+              </div>
+            </div>
+            <ul class="evidence-list">
+              <li><strong>Problem 1:</strong> right-customer discovery and online reach.</li>
+              <li><strong>Problem 2:</strong> transport cost, damage and lost sales.</li>
+            </ul>
+          </div>
         </div>
-
-        <div class="mvp-note"><span>●</span><div><strong>Roadmap note:</strong> this is a planned 21-day MVP development roadmap based on the project's existing three-week rollout plan; future milestones are not presented as already completed.</div></div>
       </div>
-    </div></section>
+    </section>
+
+    <section class="solution-tech" id="solution">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-kicker">Solution evidence + technology evidence</div>
+          <h2>Proven interaction layer. New artisan market-linkage layer.</h2>
+          <p>
+            We are extending an already-built community-tourism application
+            experience into an artisan-focused commerce workflow rather than
+            starting the low-literacy interaction layer from zero.
+          </p>
+        </div>
+
+        <div class="evidence-wrap">
+          <div class="evidence-card">
+            <div class="evidence-label"><span class="dot"></span>Solution Evidence</div>
+            <h3>Existing community-tourism app</h3>
+            <p>
+              The existing application demonstrates the base interaction
+              approach: simple mobile flows, multilingual voice interaction
+              and image enhancement.
+            </p>
+            <div class="evidence-media image-placeholder">
+              <div>
+                <strong>YOUR TOURISM APP SCREENSHOT</strong>
+                <span>Place your existing app screenshot at assets/tourism-app.jpg</span>
+              </div>
+              <img
+                src="assets/tourism-app.jpg"
+                alt="Existing community tourism application"
+                style="width:100%;display:none"
+                onload="this.style.display='block';this.previousElementSibling.style.display='none';"
+              />
+            </div>
+            <div class="tourism-strip">
+              <div class="tourism-icon">🏛️</div>
+              <div>
+                <strong>Already available for small communities</strong>
+                <p>
+                  The existing app can be used by small communities to preserve
+                  and share their cultural and heritage sites.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="evidence-card">
+            <div class="evidence-label"><span class="dot"></span>Technology Evidence</div>
+            <h3>Reuse what already works</h3>
+            <p>
+              The same low-barrier interaction layer becomes the front door for
+              artisan cataloging: voice + photo in, structured market content out.
+            </p>
+            <ul class="evidence-list">
+              <li><strong>Multilingual voice:</strong> capture information without typing.</li>
+              <li><strong>Photo enhancement:</strong> improve product presentation.</li>
+              <li><strong>Simple workflow:</strong> reduce actions for low digital literacy.</li>
+              <li><strong>New SIH layer:</strong> cataloging, craft story, pricing and market linkage.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="solution-flow" style="margin-top:46px">
+          <div class="input-box">
+            <h3>Artisan input</h3>
+            <div class="input-item">📷 Product photograph</div>
+            <div class="input-item">🎙 Voice description</div>
+            <div class="input-item">🗣 Native / regional language</div>
+          </div>
+
+          <div class="ai-box">
+            <div class="ai-orb">✦</div>
+            <h3>AI Processing Layer</h3>
+            <p>Transcribe · Translate · Enhance · Describe · Price · Prepare listing</p>
+          </div>
+
+          <div class="output-box">
+            <h3>Market-ready output</h3>
+            <div class="input-item">✨ Enhanced product image</div>
+            <div class="input-item">📝 Generated product copy</div>
+            <div class="input-item">💰 Assisted pricing</div>
+            <div class="input-item">🛒 Listing workflow</div>
+          </div>
+        </div>
+
+        <div class="features-grid" style="margin-top:18px">
+          <article class="feature-card">
+            <div class="feature-top"><div class="feature-icon">🎙</div><div class="feature-tag">Input</div></div>
+            <h3>Multilingual Voice-to-Listing</h3>
+            <p>Voice is converted into text, translated where needed, and transformed into product content.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-top"><div class="feature-icon">📷</div><div class="feature-tag">Vision AI</div></div>
+            <h3>Smart Product Photography</h3>
+            <p>Background extraction, lighting adjustments and image enhancement help create cleaner product visuals.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-top"><div class="feature-icon">💰</div><div class="feature-tag">AI</div></div>
+            <h3>Price Intelligence</h3>
+            <p>AI-assisted market pricing provides a starting point while keeping manual price override available.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-top"><div class="feature-icon">📡</div><div class="feature-tag">Offline-first</div></div>
+            <h3>Built for Patchy Connectivity</h3>
+            <p>Data can be stored locally and synchronized when the connection becomes available.</p>
+          </article>
+        </div>
+
+        <div class="solution-tech-grid">
+          <div class="solution-tech-panel dark">
+            <h3>AI Pipeline</h3>
+            <p>The mobile client stays lightweight while heavier processing happens in the backend.</p>
+            <div class="pipeline-row">
+              <div class="pipeline-node"><small>Input</small><strong>Photo + Voice</strong></div>
+              <div class="pipeline-arrow">→</div>
+              <div class="pipeline-node"><small>Speech</small><strong>Whisper</strong></div>
+              <div class="pipeline-arrow">→</div>
+              <div class="pipeline-node"><small>Vision</small><strong>SAM 2.0</strong></div>
+            </div>
+            <div class="pipeline-row">
+              <div class="pipeline-node"><small>Image</small><strong>Real-ESRGAN</strong></div>
+              <div class="pipeline-arrow">→</div>
+              <div class="pipeline-node"><small>Language</small><strong>LLaMA 3.1</strong></div>
+              <div class="pipeline-arrow">→</div>
+              <div class="pipeline-node"><small>Pricing</small><strong>XGBoost</strong></div>
+            </div>
+            <div style="margin-top:28px;padding-top:20px;border-top:1px solid #39342f;color:#aaa39a;font-size:12px">
+              Flutter + SQLite · Firebase / Firestore · Server-side AI
+            </div>
+          </div>
+
+          <div class="solution-tech-panel">
+            <h3>Technical evidence</h3>
+            <p>Core capabilities already demonstrated in the community-tourism context are reused as the inclusion layer.</p>
+            <div class="tech-list">
+              <div class="tech-card"><h3>📱 Android-first</h3><p>Focused initial deployment keeps the product scope practical.</p></div>
+              <div class="tech-card"><h3>💾 Offline storage</h3><p>Local storage supports operation under patchy connectivity.</p></div>
+              <div class="tech-card"><h3>☁️ Lightweight communication</h3><p>Heavy computation stays server-side and the client receives lightweight results.</p></div>
+              <div class="tech-card"><h3>🔗 Integration-ready</h3><p>Designed around marketplace and payment-notification workflows.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="workflow" style="margin-top:24px;border-radius:26px">
+          <div style="padding:30px">
+            <div class="section-header" style="margin-bottom:28px">
+              <div class="section-kicker">User journey</div>
+              <h2 style="color:white">From voice and photo to listing.</h2>
+              <p>The workflow minimizes the number of actions required from the artisan while keeping the final listing verifiable.</p>
+            </div>
+
+            <div class="workflow-grid">
+              <article class="workflow-step"><div class="workflow-step-num">01</div><div class="workflow-step-icon">📷</div><h3>Capture</h3><p>Take a photo of the product.</p></article>
+              <article class="workflow-step"><div class="workflow-step-num">02</div><div class="workflow-step-icon">🎙</div><h3>Speak</h3><p>Describe the craft naturally in a supported language.</p></article>
+              <article class="workflow-step"><div class="workflow-step-num">03</div><div class="workflow-step-icon">✦</div><h3>AI process</h3><p>Transcription, translation, image and content generation.</p></article>
+              <article class="workflow-step"><div class="workflow-step-num">04</div><div class="workflow-step-icon">💰</div><h3>Price</h3><p>Receive an AI-assisted market price suggestion.</p></article>
+              <article class="workflow-step"><div class="workflow-step-num">05</div><div class="workflow-step-icon">🛒</div><h3>Publish</h3><p>Prepare the product for the target marketplace workflow.</p></article>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="feasibility-mvp" id="feasibility">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-kicker">Feasibility + Road to MVP</div>
+          <h2>Designed for real-world constraints — with a focused path to a demonstrable MVP.</h2>
+          <p>
+            Offline storage, human verification, manual price override and a
+            focused Android-first scope keep the build practical. The 21-day
+            MVP roadmap below starts from the current development point.
+          </p>
+        </div>
+
+        <div class="feasibility-grid">
+          <div class="challenge-card">
+            <h3 style="font-size:23px;margin-bottom:8px">Challenge → Response</h3>
+            <div class="challenge-row"><h3>📶 Poor internet access</h3><p>Offline storage with deferred uploads when connectivity returns.</p></div>
+            <div class="challenge-row"><h3>🗣 Dialect accuracy</h3><p>Audio read-back lets the artisan verify the generated content.</p></div>
+            <div class="challenge-row"><h3>👥 Onboarding</h3><p>Cluster-based setup can involve SHG leaders and community support personnel.</p></div>
+            <div class="challenge-row"><h3>💰 Pricing uncertainty</h3><p>AI suggestions remain editable through manual price overrides.</p></div>
+          </div>
+
+          <div class="challenge-card">
+            <h3 style="font-size:23px;margin-bottom:8px">Why the approach can scale</h3>
+            <div class="challenge-row"><h3>Android-first scope</h3><p>Keeps initial development targeted.</p></div>
+            <div class="challenge-row"><h3>Open-source AI core</h3><p>Reduces dependence on per-call AI licensing for core models.</p></div>
+            <div class="challenge-row"><h3>Low infrastructure footprint</h3><p>Designed around lightweight client communication.</p></div>
+            <div class="challenge-row"><h3>Cluster-based distribution</h3><p>Community networks can support adoption across artisan clusters.</p></div>
+          </div>
+        </div>
+
+        <div class="feasibility-evidence">
+          <div class="evidence-card">
+            <div class="evidence-label"><span class="dot"></span>Feasibility Evidence</div>
+            <h3>What makes the MVP practical</h3>
+            <p>
+              The development approach reuses an existing interaction layer,
+              limits the first version to Android, keeps heavy AI server-side,
+              and uses a staged three-week build instead of attempting the full
+              ecosystem at once.
+            </p>
+            <div class="evidence-list" style="grid-template-columns:repeat(2,1fr)">
+              <li><strong>Existing base:</strong> community-tourism interaction patterns already available.</li>
+              <li><strong>Focused scope:</strong> core MVP first, integrations in the final phase.</li>
+              <li><strong>Offline-first:</strong> local data handling is part of the design from the start.</li>
+              <li><strong>Human verification:</strong> read-back and manual override reduce automation risk.</li>
+            </div>
+          </div>
+        </div>
+
+        <div class="mvp-road" id="mvp">
+          <div class="mvp-road-head">
+            <div>
+              <div class="section-kicker">21-day development plan</div>
+              <h3>Road to MVP</h3>
+              <p>
+                Linear progress from the current starting point to a demonstrable
+                MVP. The highlighted day is calculated automatically from the
+                project start date.
+              </p>
+            </div>
+            <div class="kickoff-badge"><span class="kickoff-dot"></span><span id="mvpCurrentBadge">Current day</span></div>
+          </div>
+
+          <div class="phase-bar">
+            <div class="phase active"><strong>Days 01–07 · Foundation</strong><span>App UI + multilingual mode</span></div>
+            <div class="phase"><strong>Days 08–14 · Backend</strong><span>Backend setup + dashboard</span></div>
+            <div class="phase"><strong>Days 15–21 · Integration</strong><span>Marketplace integration + MVP readiness</span></div>
+          </div>
+
+          <div class="linear-mvp">
+            <div class="mvp-track" id="mvpTrack">
+              <div class="mvp-day" data-day="1"><div class="mvp-day-card"><div class="mvp-day-num">Day 01</div><div class="mvp-day-title">Kickoff</div><div class="mvp-day-detail">Scope, screens and priorities.</div><span class="mvp-status">Current</span></div><div class="mvp-day-dot"></div></div>
+              <div class="mvp-day" data-day="2"><div class="mvp-day-card"><div class="mvp-day-num">Day 02</div><div class="mvp-day-title">UI foundation</div><div class="mvp-day-detail">Flutter navigation and primary screens.</div><span class="mvp-status">Current</span></div><div class="mvp-day-dot"></div></div>
+              <div class="mvp-day" data-day="3"><div class="mvp-day-card"><div class="mvp-day-num">Day 03</div><div class="mvp-day-title">Catalog flow</div><div class="mvp-day-detail">Capture, preview and catalog entry.</div><span class="mvp-status">Current</span></div><div class="mvp-day-dot"></div></div>
+              <div class="mvp-day" data-day="4"><div class="mvp-day-card"><div class="mvp-day-num">Day 04</div><div class="mvp-day-title">Voice input</div><div class="mvp-day-detail">Recording, playback and voice UI.</div><span class="mvp-status">Current</span></div><div class="mvp-day-dot"></div></div>
+              <div class="mvp-day" data-day="5"><div class="mvp-day-card"><div class="mvp-day-num">Day 05</div><div class="mvp-day-title">Language mode</div><div class="mvp-day-detail">Language selection and transcription.</div><span class="mvp-status">Current</span></div><div class="mvp-day-dot"></div></div>
+              <div class="mvp-day" data-day="6"><div class="mvp-day-card"><div class="mvp-day-num">Day 06</div><div class="mvp-day-title">Photo workflow</div><div class="mvp-day-detail">Capture, upload and enhancement.</div><span class="mvp-status">Current</span></div><div class="mvp-day-dot"></div></div>
+              <div class="mvp-day" data-day="7"><div class="mvp-day-card"><div class="mvp-day-num">Day 07</div><div class="mvp-day-title">Foundation milestone</div><div class="mvp-day-detail">Join the core UI, voice and photo flows.</div><span class="mvp-status">Current</span></div><div class="mvp-day-dot"></div></div>
+
+              <div class="mvp-day" data-day="8"><div class="mvp-day-card"><div class="mvp-day-num">Day 08</div><div class="mvp-day-title">Backend setup</div><div class="mvp-day-detail">Firebase / Firestore and data structure.</div><span class="mvp-status">Current</span></div><div class="mvp-day-dot"></div></div>
+              <div class="mvp-day" data-day="9"><div class="mvp-day-card"><div class="mvp-day-num">Day 09</div><div class="mvp-day-title">Local storage</div><div class="mvp-day-detail">SQLite persistence for offline use.</div><span class="mvp-status">Current</span></div><div class="mvp-day-dot"></div></div>
+              <div class="mvp-day" data-day="10"><div class="mvp-day-card"><div class="mvp-day-num">Day 10</div><div class="mvp-day-title">AI pipeline</div><div class="mvp-day-detail">Connect speech and image processing.</div><span class="mvp-status">Current</span></div><div class="mvp-day-dot"></div></div>
+              <div class="mvp-day" data-day="11"><div class="mvp-day-card"><div class="mvp-day-num">Day 11</div><div class="mvp-day-title">Catalog generation</div><div class="mvp-day-detail">Structured title, copy and listing fields.</div><span class="mvp-status">Current</span></div><div class="mvp-day-dot"></div></div>
+              <div class="mvp-day" data-day="12"><div class="mvp-day-card"><div class="mvp-day-num">Day 12</div><div class="mvp-day-title">Dashboard</div><div class="mvp-day-detail">Basic admin and monitoring view.</div><span class="mvp-status">Current</span></div><div class="mvp-day-dot"></div></div>
+              <div class="mvp-day" data-day="13"><div class="mvp-day-card"><div class="mvp-day-num">Day 13</div><div class="mvp-day-title">Verification</div><div class="mvp-day-detail">Read-back and review before confirmation.</div><span class="mvp-status">Current</span></div><div class="mvp-day-dot"></div></div>
+              <div class="mvp-day" data-day="14"><div class="mvp-day-card"><div class="mvp-day-num">Day 14</div><div class="mvp-day-title">Backend milestone</div><div class="mvp-day-detail">End-to-end cataloging test.</div><span class="mvp-status">Current</span></div><div class="mvp-day-dot"></div></div>
+
+              <div class="mvp-day" data-day="15"><div class="mvp-day-card"><div class="mvp-day-num">Day 15</div><div class="mvp-day-title">Marketplace layer</div><div class="mvp-day-detail">Listing payloads and interfaces.</div><span class="mvp-status">Current</span></div><div class="mvp-day-dot"></div></div>
+              <div class="mvp-day" data-day="16"><div class="mvp-day-card"><div class="mvp-day-num">Day 16</div><div class="mvp-day-title">GeM workflow</div><div class="mvp-day-detail">Planned GeM integration layer.</div><span class="mvp-status">Current</span></div><div class="mvp-day-dot"></div></div>
+              <div class="mvp-day" data-day="17"><div class="mvp-day-card"><div class="mvp-day-num">Day 17</div><div class="mvp-day-title">Amazon layer</div><div class="mvp-day-detail">Planned marketplace connection.</div><span class="mvp-status">Current</span></div><div class="mvp-day-dot"></div></div>
+              <div class="mvp-day" data-day="18"><div class="mvp-day-card"><div class="mvp-day-num">Day 18</div><div class="mvp-day-title">Sync & resilience</div><div class="mvp-day-detail">Poor-connectivity recovery tests.</div><span class="mvp-status">Current</span></div><div class="mvp-day-dot"></div></div>
+              <div class="mvp-day" data-day="19"><div class="mvp-day-card"><div class="mvp-day-num">Day 19</div><div class="mvp-day-title">Pilot testing</div><div class="mvp-day-detail">Representative artisan scenarios.</div><span class="mvp-status">Current</span></div><div class="mvp-day-dot"></div></div>
+              <div class="mvp-day" data-day="20"><div class="mvp-day-card"><div class="mvp-day-num">Day 20</div><div class="mvp-day-title">Stabilize</div><div class="mvp-day-detail">Polish UI and fix critical issues.</div><span class="mvp-status">Current</span></div><div class="mvp-day-dot"></div></div>
+              <div class="mvp-day" data-day="21"><div class="mvp-day-card"><div class="mvp-day-num">Day 21</div><div class="mvp-day-title">MVP ready</div><div class="mvp-day-detail">Complete the demonstrable MVP milestone.</div><span class="mvp-status">Current</span></div><div class="mvp-day-dot"></div></div>
+            </div>
+
+            <div class="mvp-current-text">
+              <span>Start <strong>→</strong> development foundation</span>
+              <span id="mvpCurrentText"><strong>Current progress: Day 1</strong></span>
+              <span>MVP <strong>→</strong> demonstrable build</span>
+            </div>
+          </div>
+
+          <div class="mvp-note">
+            <span>●</span>
+            <div>
+              <strong>Live roadmap:</strong>
+              the current-day highlight is calculated automatically from the
+              project start date. Completed/past days remain visible while the
+              current day moves forward.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
     <section class="impact" id="impact"><div class="container">
       <div class="section-header"><div class="section-kicker">Intended impact</div><h2>From artisan identity to digital market participation.</h2><p>The goal is to reduce the digital effort needed to present traditional craft online and create a repeatable model for artisan clusters.</p></div>
       <div class="impact-stats"><div class="impact-stat"><div class="impact-number">70L+</div><h3>Registered artisans</h3><p>Figure referenced in the current SIH presentation.</p></div><div class="impact-stat"><div class="impact-number">₹30K–50K</div><h3>Target annual uplift</h3><p>Target estimate presented for potential artisan income improvement.</p></div><div class="impact-stat"><div class="impact-number">1%</div><h3>Illustrative adoption</h3><p>Presented as a scenario corresponding to 70,000 active micro-sellers.</p></div></div>
-      <div class="impact-bottom"><div class="impact-list"><h3>For artisans</h3><ul><li>Year-round digital sales opportunities</li><li>Fairer market access</li><li>Home-based digital operation</li><li>Digital participation history</li></ul></div><div class="impact-list"><h3>For the ecosystem</h3><ul><li>Trackable digital adoption</li><li>Reduced dependence on physical exhibitions</li><li>Greater participation in digital procurement</li><li>Repeatable deployment across clusters</li></ul></div></div>
+      
+      <div class="impact-evidence">
+        <h3>Impact Evidence</h3>
+        <p>
+          <strong>Not available yet.</strong> There is no deployment evidence
+          for this exact app because it is a new proposed solution. Impact
+          metrics are therefore presented as intended outcomes and should be
+          updated after pilot deployment and user testing.
+        </p>
+      </div>
+
+<div class="impact-bottom"><div class="impact-list"><h3>For artisans</h3><ul><li>Year-round digital sales opportunities</li><li>Fairer market access</li><li>Home-based digital operation</li><li>Digital participation history</li></ul></div><div class="impact-list"><h3>For the ecosystem</h3><ul><li>Trackable digital adoption</li><li>Reduced dependence on physical exhibitions</li><li>Greater participation in digital procurement</li><li>Repeatable deployment across clusters</li></ul></div></div>
     </div></section>
 
     <section class="cta" id="demo"><div class="container"><div class="cta-box"><div class="section-kicker">OG-IOT · SIH 2026</div><h2>Speak your craft. AI takes it to the market.</h2><p>A zero-barrier workflow for turning traditional craft, local language, and simple product photos into structured digital commerce content.</p><div class="hero-buttons"><a href="#solution" class="btn btn-primary">See How It Works</a><a href="#mvp" class="btn btn-secondary" style="color:white;border-color:#4b4640">Follow the MVP</a></div></div></div></section>
@@ -186,9 +544,47 @@
     const navLinks=document.getElementById('navLinks');
     menuBtn.addEventListener('click',()=>navLinks.classList.toggle('active'));
     document.querySelectorAll('.nav-links a').forEach(link=>link.addEventListener('click',()=>navLinks.classList.remove('active')));
-    const reveal=document.querySelectorAll('.problem-card,.feature-card,.innovation-card,.workflow-step,.tech-card,.challenge-card,.impact-stat,.impact-list,.mvp-road');
+    const reveal=document.querySelectorAll('.problem-card,.feature-card,.innovation-card,.workflow-step,.tech-card,.challenge-card,.impact-stat,.impact-list,.evidence-card,.mvp-road');
     const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';observer.unobserve(e.target)}}),{threshold:.08});
     reveal.forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .6s ease,transform .6s ease';observer.observe(el)});
+
+    // ROAD TO MVP — automatic current-day highlight
+    // Project start date: 26 September 2026, kept here as the single source of truth.
+    const projectStart = new Date('2026-09-26T00:00:00');
+
+    function updateMvpTimeline(){
+      const now = new Date();
+      const elapsed = Math.floor((now - projectStart) / 86400000);
+      const currentDay = Math.min(21, Math.max(1, elapsed + 1));
+
+      document.querySelectorAll('.mvp-day').forEach(card => {
+        card.classList.toggle('current', Number(card.dataset.day) === currentDay);
+      });
+
+      const badge = document.getElementById('mvpCurrentBadge');
+      const currentText = document.getElementById('mvpCurrentText');
+
+      if (elapsed < 0) {
+        if (badge) badge.textContent = 'Starts at Day 1';
+        if (currentText) currentText.innerHTML = '<strong>Upcoming: Day 1</strong>';
+      } else if (elapsed >= 21) {
+        if (badge) badge.textContent = 'MVP milestone';
+        if (currentText) currentText.innerHTML = '<strong>21-day MVP milestone reached</strong>';
+      } else {
+        if (badge) badge.textContent = 'Current: Day ' + currentDay;
+        if (currentText) currentText.innerHTML = '<strong>Current progress: Day ' + String(currentDay).padStart(2,'0') + '</strong>';
+      }
+    }
+
+    updateMvpTimeline();
+    setInterval(updateMvpTimeline, 60 * 60 * 1000);
+
+    // Small image fallback: if the tourism screenshot is present, display it;
+    // otherwise the styled placeholder remains visible.
+    document.querySelectorAll('img[src]').forEach(img=>{
+      img.addEventListener('error',()=>{img.style.display='none'});
+    });
   </script>
+
 </body>
 </html>
